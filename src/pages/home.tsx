@@ -1,8 +1,23 @@
+import { useEffect } from "react";
+import { Calculator } from "../widgets/calculator/ui/Calculator";
+import { Button } from "../components/ui/button";
+
 const Home: React.FC = () => {
+  const toggleTheme = () => {
+     document.documentElement.classList.toggle('dark');  
+  }; 
+
   return (
-    <div className="bg-blue-500 text-white p-4 rounded fs-4">
-      Tailwind работает!
+    <div>
+      <div className="flex items-center justify-center min-h-screen">
+        <Calculator />
+      </div>
+
+      <Button onClick={toggleTheme}>
+        Toggle Theme
+      </Button>
     </div>
+
   );
 };
 
